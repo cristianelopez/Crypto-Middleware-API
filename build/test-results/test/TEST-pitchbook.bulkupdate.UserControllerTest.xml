@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="pitchbook.bulkupdate.UserControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-09-17T22:50:18" hostname="HXNB-1999" time="0.096">
+  <properties/>
+  <testcase name="getBTCUSDTCrypto()" classname="pitchbook.bulkupdate.UserControllerTest" time="0.096"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
