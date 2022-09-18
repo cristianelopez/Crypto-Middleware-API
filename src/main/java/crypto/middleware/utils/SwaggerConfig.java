@@ -21,8 +21,7 @@ public class SwaggerConfig {
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("crypto.middleware"))
                 .paths(PathSelectors.any())
-    
-                .build()
+                   .build()
                 .apiInfo(getApiInfo())
                 ;
     }
