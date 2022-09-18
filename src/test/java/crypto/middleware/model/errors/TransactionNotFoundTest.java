@@ -1,9 +1,7 @@
-package crypto.middleware.model.Errors;
+package crypto.middleware.model.errors;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import crypto.middleware.model.errors.TransactionNotFound;
 
 class TransactionNotFoundTest {
     @Test

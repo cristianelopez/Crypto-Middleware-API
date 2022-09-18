@@ -3,9 +3,6 @@ package crypto.middleware.model;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import crypto.middleware.model.CryptoCurrency;
-import crypto.middleware.model.CryptoCurrencyList;
-
 class CryptoCurrencyTest {
 
     @Test

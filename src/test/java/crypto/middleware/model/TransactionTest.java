@@ -3,9 +3,6 @@ package crypto.middleware.model;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import crypto.middleware.model.Account;
-import crypto.middleware.model.Transaction;
-
 class TransactionTest {
 
     Account user = new Account("Pepe", "Garcia", "pepe@gmail.com",

@@ -63,4 +63,24 @@ public class CryptoController {
 		return ResponseEntity.ok().body(list);
 	}
 
+	
+
+//    @Operation(summary = "Register account")
+//    @PostMapping(path="/addAccount" , consumes = "application/json", produces = "application/json")
+//    public Account createUser(@Parameter(description = "The account to be registered", required = true)
+//                               @RequestBody UserCreateDTO user) throws UserError{
+//        return this.accountService.createUser(user);
+//    }
+//
+//    @Operation(summary = "Delete Account")
+//    @DeleteMapping("/deleteAccount /{id}")
+//    public void deleteUser(@Parameter(description = "The account ID to be deleted", required = true)
+//                               @PathVariable Long id){
+//        List<Transaction> transactionsByID = this.transactionService.getTransactionsByUserId(id);
+//        if(!transactionsByID.isEmpty()) {
+//            transactionsByID.forEach(transaction -> this.transactionService.deleteTransaction(transaction.getId()));
+//        }else{
+//            this.accountService.deleteUser(id);
+//        }
+//    }
 }

@@ -3,8 +3,6 @@ package crypto.middleware.model;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import crypto.middleware.model.Account;
-
 class UserTest {
 
     @Test
