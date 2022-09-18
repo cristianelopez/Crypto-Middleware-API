@@ -5,7 +5,9 @@ import java.util.Date;
 
 public class CurrentDateTime {
 
-    private CurrentDateTime() {
+    private static final String DATE_FORMAT = "dd/MM/yyyy HH:mm:ss";
+
+	private CurrentDateTime() {
         //Empty Constructor
     }
 
@@ -14,8 +16,13 @@ public class CurrentDateTime {
         }
 
     public static String getNewDateString(){
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        SimpleDateFormat formatter = new SimpleDateFormat(DATE_FORMAT);
         return formatter.format(getNewDate());
+    }
+    
+    public static SimpleDateFormat getNewDateFormatter(){
+        SimpleDateFormat formatter = new SimpleDateFormat(DATE_FORMAT);
+        return formatter;
     }
 }
 
