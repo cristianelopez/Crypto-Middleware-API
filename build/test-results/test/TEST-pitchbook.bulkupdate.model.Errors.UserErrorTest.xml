@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="pitchbook.bulkupdate.model.Errors.UserErrorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-09-17T22:50:19" hostname="HXNB-1999" time="0.007">
-  <properties/>
-  <testcase name="testUserErrorModel()" classname="pitchbook.bulkupdate.model.Errors.UserErrorTest" time="0.007"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
