@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 import crypto.middleware.model.CryptoCurrency;
 
-class UserControllerTest {
+class UserControllerMockTest {
 
     @Mock
     RestTemplate restTemplate = Mockito.mock(RestTemplate.class);
