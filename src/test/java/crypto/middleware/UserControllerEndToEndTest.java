@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -12,12 +13,13 @@ import org.springframework.boot.web.server.LocalServerPort;
 import crypto.middleware.webservice.CryptoController;
 
 
-@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
 public class UserControllerEndToEndTest {
 
 	private static final String HTTP_LOCALHOST = "http://localhost:";
 
-	@LocalServerPort
+	
+	@Value("${server.port:8090}")
 	private int port;
 	
 	@Autowired
