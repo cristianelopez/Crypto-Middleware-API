@@ -16,10 +16,8 @@ class CryptoCurrencyTest {
 
     @Test
     void testEmptyConstructor() {
-        CryptoCurrency crypto = new CryptoCurrency();
-        crypto.setSymbol("symbol");
-        crypto.setPrice(10f);
-        crypto.setLastUpdateDateAndTime("date");
+    	 CryptoCurrency crypto = new CryptoCurrency("symbol", 10f, "date");
+
 
         Assertions.assertEquals("symbol", crypto.getSymbol());
         Assertions.assertEquals(10f, crypto.getPrice());
@@ -31,7 +29,7 @@ class CryptoCurrencyListTest {
     @Test
     void testCryptoCurrencyListModel() {
         CryptoCurrencyList cryptoList = new CryptoCurrencyList();
-        CryptoCurrency crypto = new CryptoCurrency();
+   	 CryptoCurrency crypto = new CryptoCurrency("symbol", 10f, "date");
         cryptoList.addCrypto(crypto);
 
         Assertions.assertTrue(cryptoList.cryptos.contains(crypto));

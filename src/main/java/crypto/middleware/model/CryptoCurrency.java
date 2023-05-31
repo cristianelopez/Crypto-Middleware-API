@@ -16,7 +16,9 @@ public class CryptoCurrency {
     private Float price;
     private String lastUpdateDateAndTime;
 
-
+    public CryptoCurrency() {
+    }
+    
 
     public CryptoCurrency(String symbol, Float price, String lastUpdateDateAndTime) {
         this.symbol = symbol;

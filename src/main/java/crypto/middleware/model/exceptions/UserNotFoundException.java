@@ -1,12 +1,12 @@
-package crypto.middleware.model.errors;
+package crypto.middleware.model.exceptions;
 
-public class UserNotFound  extends RuntimeException {
+public class UserNotFoundException  extends RuntimeException {
     /**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public UserNotFound(){
+	public UserNotFoundException(){
         super("There is not a registered user with that ID");
         this.setStackTrace(new StackTraceElement[0]);
     }
