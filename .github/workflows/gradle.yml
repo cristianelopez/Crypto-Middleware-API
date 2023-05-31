@@ -14,13 +14,13 @@ on:
     branches: [ "main" ]
 
 permissions:
-  contents: write-all
+  contents: read
 
 jobs:
   build:
 
-    runs-on: ubuntu-latest
-
+    runs-on:  [self-hosted, ubuntu-latest]
+    
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
