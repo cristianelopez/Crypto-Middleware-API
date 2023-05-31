@@ -8,7 +8,6 @@ import javax.persistence.Id;
 
 @Entity
 @Data
-@NoArgsConstructor
 @Builder
 public class CryptoCurrency {
     @Id
