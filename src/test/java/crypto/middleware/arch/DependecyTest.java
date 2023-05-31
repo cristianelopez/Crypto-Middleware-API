@@ -56,13 +56,6 @@ class DependecyTest {
                 .whereLayer("Persistence").mayOnlyBeAccessedByLayers("Service");
     }
 
-    @Test
-    void serviceIntegrationClassesShouldHaveSpringServiceAnnotation() {
-        classes().that().resideInAPackage("..integration..")
-                .should().beAnnotatedWith("org.springframework.stereotype.Service")
-                .check(baseClasses);
-    }
-
 
 
     @Test

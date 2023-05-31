@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,11 +16,13 @@ import crypto.middleware.helpers.CurrentDateTime;
 import crypto.middleware.model.CryptoCurrency;
 import crypto.middleware.model.CryptoCurrencyEnum;
 import crypto.middleware.model.CryptoCurrencyList;
+import crypto.middleware.model.exceptions.UserNotFoundException;
 import crypto.middleware.service.CryptoService;
 import crypto.middleware.service.integration.BinanceProxyService;
 import io.swagger.annotations.Api;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @Api(tags = "CryptoCurrency services")
@@ -28,6 +31,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @Transactional
 @RequestMapping("/api/crypto")
 public class CryptoController {
+	
+	
 	@Autowired
 	CryptoService cryptoService;
 
@@ -67,8 +72,8 @@ public class CryptoController {
 
 //    @Operation(summary = "Register account")
 //    @PostMapping(path="/addAccount" , consumes = "application/json", produces = "application/json")
-//    public Account createUser(@Parameter(description = "The account to be registered", required = true)
-//                               @RequestBody UserCreateDTO user) throws UserError{
+//    public AccounCreateUserDTO createUser(@Parameter(description = "The account to be registered", required = true)
+//                               @RequestBody User user) throws UserNotFoundException{
 //        return this.accountService.createUser(user);
 //    }
 //
@@ -82,5 +87,5 @@ public class CryptoController {
 //        }else{
 //            this.accountService.deleteUser(id);
 //        }
-//    }
+ //   }
 }

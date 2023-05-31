@@ -13,13 +13,14 @@ import org.springframework.boot.web.server.LocalServerPort;
 import crypto.middleware.webservice.CryptoController;
 
 
-@SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class UserControllerEndToEndTest {
 
 	private static final String HTTP_LOCALHOST = "http://localhost:";
 
 	
-	@Value("${server.port:8090}")
+	//@Value("${server.port:8090}")
+	@LocalServerPort
 	private int port;
 	
 	@Autowired
