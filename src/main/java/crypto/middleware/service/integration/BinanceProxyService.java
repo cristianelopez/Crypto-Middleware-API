@@ -19,5 +19,6 @@ public class BinanceProxyService {
 	CryptoCurrency entity = restTemplate.getForObject(binanceApiURL + "ticker/price?symbol=" + symbol, CryptoCurrency.class);
 	return entity;
 	}
-	
+
+
 }

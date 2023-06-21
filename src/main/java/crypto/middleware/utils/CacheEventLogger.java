@@ -14,6 +14,6 @@ implements CacheEventListener<Object, Object> {
   @Override
   public void onEvent(
     CacheEvent<? extends Object, ? extends Object> cacheEvent) {
-      logger.info(cacheEvent.getKey() + " - " + cacheEvent.getOldValue() + " - " +cacheEvent.getNewValue());
+      logger.info("UpdateCache | KEY: " + cacheEvent.getKey() + " | OLDVALUE: " + cacheEvent.getOldValue() + " | NEWVALUE: " +cacheEvent.getNewValue());
   }
 }

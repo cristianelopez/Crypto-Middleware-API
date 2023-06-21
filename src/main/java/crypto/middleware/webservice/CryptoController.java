@@ -39,7 +39,7 @@ public class CryptoController {
 
 
 	@Operation(summary = "Get a cryptocurrency price")
-	@GetMapping("/getCrypoValue/{symbol}")
+	@GetMapping("/getCryptoValue/{symbol}")
 	public ResponseEntity<CryptoCurrency> getCryptoCurrencyValue(
 			@Parameter(description = "The cryptocurrency symbol that needs to be fetched", required = true) @PathVariable String symbol) {
 		CryptoCurrency entity = cryptoService.getCryptoCurrencyValue(symbol);
