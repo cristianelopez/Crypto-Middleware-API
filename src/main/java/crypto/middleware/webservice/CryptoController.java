@@ -36,35 +36,21 @@ public class CryptoController {
 	@Autowired
 	CryptoService cryptoService;
 
-	@Autowired
-	BinanceProxyService binanceProxyService;
+
 
 	@Operation(summary = "Get a cryptocurrency price")
 	@GetMapping("/getCrypoValue/{symbol}")
 	public ResponseEntity<CryptoCurrency> getCryptoCurrencyValue(
 			@Parameter(description = "The cryptocurrency symbol that needs to be fetched", required = true) @PathVariable String symbol) {
-		CryptoCurrency entity = binanceProxyService.getCryptoCurrencyValue(symbol);
-
-		SimpleDateFormat formatter = CurrentDateTime.getNewDateFormatter();
-		if (entity != null) {
-			entity.setLastUpdateDateAndTime(formatter.format(new Date()));
-		}
+		CryptoCurrency entity = cryptoService.getCryptoCurrencyValue(symbol);
 		return ResponseEntity.ok().body(entity);
 	}
 
 	@Operation(summary = "Get all cryptocurrency prices")
 	@GetMapping("/getCrypoValue/all")
 	public ResponseEntity<CryptoCurrencyList> getAllCryptoCurrencyPrices() {
-		CryptoCurrencyList list = new CryptoCurrencyList();
-		for (CryptoCurrencyEnum crypto : CryptoCurrencyEnum.values()) {
-			CryptoCurrency entity = binanceProxyService.getCryptoCurrencyValue(crypto.name());
-			
-			if (entity != null) {
-				entity.setLastUpdateDateAndTime(CurrentDateTime.getNewDateString());
-			}
-			list.addCrypto(entity);
-
-		}
+		CryptoCurrencyList list = cryptoService.getAllCryptoCurrencyPrices();
+	
 		return ResponseEntity.ok().body(list);
 	}
 
