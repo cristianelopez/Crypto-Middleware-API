@@ -18,6 +18,7 @@ import crypto.middleware.service.integration.BinanceProxyService;
 
 @Service
 public class CryptoService {
+	
     @Autowired
     CryptoRepository cryptoRepository;
 

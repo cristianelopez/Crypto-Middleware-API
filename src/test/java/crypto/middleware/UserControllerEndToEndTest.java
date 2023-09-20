@@ -42,10 +42,8 @@ public class UserControllerEndToEndTest {
 	
 	@Test
 	public void getCrypoValueTest() throws Exception {
-		webClient.get().uri("/api/crypto/getCrypoValue/all");
-	//	assertThat(this.restTemplate.getForObject(HTTP_LOCALHOST + port + "/api/crypto/getCrypoValue/all",
-		//		String.class)).contains("cryptos");
-	
+		webClient.get().uri("/api/crypto/crypto/all");
+		assertThat(this.restTemplate.getForObject(HTTP_LOCALHOST + port + "/api/crypto/crypto/all", String.class)).contains("cryptos");
 	}
 
 }

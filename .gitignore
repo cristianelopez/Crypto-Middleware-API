@@ -4,6 +4,6 @@ bin/
 /.gradle/
 /build/
 *.lock
-.gradle/7.4.2/checksums/md5-checksums.bin
+.gradle/*
 *.bin
-*.bin
+*.probe

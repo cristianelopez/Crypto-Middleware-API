@@ -12,6 +12,7 @@ import com.tngtech.archunit.core.importer.ClassFileImporter;
 import com.tngtech.archunit.core.importer.ImportOption;
 
 class DependecyTest {
+	
     private JavaClasses baseClasses;
     
     
