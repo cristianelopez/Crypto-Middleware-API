@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 import crypto.middleware.model.Role;
 
 @Repository
-public interface RolePersistence extends JpaRepository<Role, Long> {
+public interface RoleRepository extends JpaRepository<Role, Long> {
     Optional<Role> findByName(String name);
 }

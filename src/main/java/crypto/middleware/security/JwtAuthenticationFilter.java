@@ -41,7 +41,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         if (StringUtils.hasText(token) && jwtTokenProvider.validateToken(token)){
             String email = jwtTokenProvider.getEmailFromJwt(token);
             UserDetails userDetails = customUserDetailsService.loadUserByUsername(email);
+            
             List<String> userRoles = userDetails.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList();
+           
             if(userRoles.contains("USER") || userRoles.contains("ADMIN")){
                 UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userDetails,
                         null, userDetails.getAuthorities());

@@ -16,16 +16,16 @@ import org.springframework.stereotype.Service;
 
 import crypto.middleware.model.Role;
 import crypto.middleware.model.User;
-import crypto.middleware.repositories.UserPersistence;
+import crypto.middleware.repositories.UserRepository;
 
 @Service
 @Transactional
 public class CustomUserDetailsService implements UserDetailsService {
 
-    private UserPersistence userPersistence;
+    private UserRepository userPersistence;
 
     @Autowired
-    public CustomUserDetailsService(UserPersistence userPersistence) {
+    public CustomUserDetailsService(UserRepository userPersistence) {
         this.userPersistence = userPersistence;
     }
 

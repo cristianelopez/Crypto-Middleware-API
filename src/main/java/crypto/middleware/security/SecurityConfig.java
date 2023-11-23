@@ -57,7 +57,8 @@ public class SecurityConfig {
         http.headers().frameOptions().disable();
         http
                 .csrf()
-                .ignoringRequestMatchers("/**")
+                // REVISAR
+                .ignoringAntMatchers("/**")
                 .and()
                 .exceptionHandling()
                 .authenticationEntryPoint(jwtAuthenticationEntryPoint)
@@ -66,7 +67,8 @@ public class SecurityConfig {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeHttpRequests()
-                .requestMatchers(AUTH_WHITELIST)
+                // REVISAR
+                .antMatchers(AUTH_WHITELIST)
                 .permitAll()
                 .requestMatchers(toH2Console())
                 .permitAll()
