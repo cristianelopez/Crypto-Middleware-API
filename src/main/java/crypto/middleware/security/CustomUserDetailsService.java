@@ -1,3 +1,4 @@
+/*
 package crypto.middleware.security;
 
 import java.util.Collection;
@@ -38,3 +39,4 @@ public class CustomUserDetailsService implements UserDetailsService {
         return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), mapToAuthorities(user.getRoles()));
     }
 }
+*/

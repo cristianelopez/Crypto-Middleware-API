@@ -1,3 +1,4 @@
+/*
 package crypto.middleware.security;
 
 import static org.springframework.boot.autoconfigure.security.servlet.PathRequest.toH2Console;
@@ -79,3 +80,4 @@ public class SecurityConfig {
 
     }
 }
+*/

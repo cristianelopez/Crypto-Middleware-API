@@ -1,3 +1,4 @@
+/*
 package crypto.middleware.security;
 
 import java.io.IOException;
@@ -22,3 +23,4 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
 //        response.getWriter().print(jsonError);
     }
 }
+*/
