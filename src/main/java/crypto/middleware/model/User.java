@@ -1,5 +1,6 @@
 package crypto.middleware.model;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -150,7 +151,7 @@ public class User implements GenericSystemElement {
     @JoinColumn(name = "id_role")
     private List<Role> roles = new ArrayList<>();
 
-    public User(String email, String walletAddress, String name, String surname, String address, String password, String cvu) {
+    public User(String email, String walletAddress, String name, String surname, String address, String password, String cvu,Role ... roles) {
         this.email = email;
         this.name = name;
         this.surname = surname;
@@ -158,6 +159,7 @@ public class User implements GenericSystemElement {
         this.password = password;
         this.cvu = cvu;
         this.walletAddress = walletAddress;
+		this.roles = Arrays.asList(roles);
     }
 
     public String getId() {

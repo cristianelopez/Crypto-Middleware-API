@@ -1,4 +1,3 @@
-/*
 package crypto.middleware.security;
 
 import static org.springframework.boot.autoconfigure.security.servlet.PathRequest.toH2Console;
@@ -53,7 +52,7 @@ public class SecurityConfig {
             "/intention/getActivesIntentions/**"
     };
 
-    @Bean
+/*    @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http.headers().frameOptions().disable();
         http
@@ -78,6 +77,5 @@ public class SecurityConfig {
         http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
         return http.build();
 
-    }
+    }*/
 }
-*/

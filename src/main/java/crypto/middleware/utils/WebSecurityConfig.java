@@ -1,4 +1,3 @@
-/*
 package crypto.middleware.utils;
 
 
@@ -19,4 +18,3 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 }
-*/
