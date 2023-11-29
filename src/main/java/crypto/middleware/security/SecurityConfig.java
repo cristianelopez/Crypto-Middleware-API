@@ -31,15 +31,21 @@ public class SecurityConfig {
         return authenticationManagerBuilder.build();
     }
 
+    private static final String[] AUTH_WHITELIST = {
+            "/auth/**",
+            "/swagger-ui/**",
+            "/swagger-resources/**",
+            "/v3/api-docs/**",
+            "/v2/api-docs/**"
+    };
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-        http.csrf().disable()
+        http
                 .authorizeRequests()
-                .antMatchers("/auth/**").permitAll()
+                .antMatchers(AUTH_WHITELIST).permitAll()
                 .requestMatchers(PathRequest.toH2Console()).permitAll()
-
                 .anyRequest().authenticated()
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().addFilterBefore(jwtAuthorizationFilter,UsernamePasswordAuthenticationFilter.class);
