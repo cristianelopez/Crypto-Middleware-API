@@ -29,6 +29,8 @@ public class InitServiceInMemory {
     @Autowired
     private UserRepository userRepository;
 
+
+
 //    @Autowired
 //    private AccountService userService;
 
@@ -42,12 +44,12 @@ public class InitServiceInMemory {
 
     private void fireInitialData() {
         Role roleAdmin = new Role("ADMIN");
-        Role roleOperator = new Role("OPERATOR");
+        Role roleOperator = new Role("USER");
         roleAdmin = roleRepository.save(roleAdmin);
         roleOperator = roleRepository.save(roleOperator);
-        User user = new User("Pepe", "Pepa", "pepe@gmail.com", "San Martin 185", "unaPassw123??", "1234567891234567891234", "12345678",roleAdmin);
+        User user = new User("pepe@gmail.com", "Pepa","Pepa" , "San Martin 185", "unaPassw123??", "123456", "12345678",roleAdmin);
         userRepository.save(user);
-        user = new User("Pedro", "Pedro", "pedro@gmail.com", "San Martin 185", "unaPassw123??", "1234567891234567891234", "12345678",roleOperator);
+        user = new User("pedro@gmail.com", "Pedro","Pedro" , "San Martin 185", "unaPassw123??", "123456", "12345678",roleOperator);
         userRepository.save(user);
     }
 }

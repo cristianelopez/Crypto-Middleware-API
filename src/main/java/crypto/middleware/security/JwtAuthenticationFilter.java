@@ -14,9 +14,11 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+@Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     @Autowired
@@ -38,6 +40,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                                     HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
         String token = getTokenFromRequest(request);
+        if (token == null ) {
+            filterChain.doFilter(request, response);
+            return;
+        }
         if (StringUtils.hasText(token) && jwtTokenProvider.validateToken(token)){
             String email = jwtTokenProvider.getEmailFromJwt(token);
             UserDetails userDetails = customUserDetailsService.loadUserByUsername(email);

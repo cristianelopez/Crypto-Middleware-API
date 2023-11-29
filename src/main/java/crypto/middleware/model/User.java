@@ -3,12 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 import lombok.AllArgsConstructor;
@@ -147,9 +142,9 @@ public class User implements GenericSystemElement {
 //    @NotNull
     private int operationsPerformed = 0;
 
-    @ManyToMany
+    @ManyToMany(fetch= FetchType.EAGER)
     @JoinColumn(name = "id_role")
-    private List<Role> roles = new ArrayList<>();
+    private List<Role> roles;
 
     public User(String email, String walletAddress, String name, String surname, String address, String password, String cvu,Role ... roles) {
         this.email = email;
